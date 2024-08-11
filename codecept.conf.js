@@ -8,17 +8,18 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  tests: './*Test Cases/login_test.js',
+  tests: './test cases/**/*.js',
   output: './output',
   helpers: {
     Playwright: {
       browser: 'chromium',
       url: 'https://www.amazon.in/',
-      show: true
-    }
+      waitForTimeout: 10000,
+      show: true,
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'Amazon'
-}
+  name: 'Amazon',
+};
